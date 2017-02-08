@@ -1,2 +1,19 @@
 en:
-  hello: "Hello world"
+  title: "Manager Library application"
+  layouts:
+    logo: "Manager Library"
+    log-in: "Log in"
+    about: "About"
+    contact: "Contact"
+    search: "Search"
+    info: "Manager Library application by "
+    group: "iRails Group"
+  static_pages:
+    welcome: "Welcome to Manager Library application"
+    notification: "Please log in to use, if you don't have account:"
+    signup-now: "Sign up now!"
+    about-pages: "This is about pages"
+    contact-pages: "This is contact pages"
+  users:
+    sign-up: "Sign up"
+    signup-pages: "This will be a signup page for new users."
