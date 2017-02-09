@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170208041651) do
+ActiveRecord::Schema.define(version: 20170209073957) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "name"
@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(version: 20170208041651) do
     t.integer  "borrow_out_date", default: 0
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
+    t.string   "remember_digest"
   end
 
 end
