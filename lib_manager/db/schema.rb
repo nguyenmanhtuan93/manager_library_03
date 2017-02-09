@@ -83,6 +83,9 @@ ActiveRecord::Schema.define(version: 20170209073957) do
     t.string   "targetable_type"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["ownerable_id", "targetable_id"], name: "index_relationships_on_ownerable_id_and_targetable_id", unique: true
+    t.index ["ownerable_id"], name: "index_relationships_on_ownerable_id"
+    t.index ["targetable_id"], name: "index_relationships_on_targetable_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -5,7 +5,59 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to t("layouts.search"), "#" %></li>
         <li><%= link_to t("layouts.home"), root_path %></li>
-        <li><%= link_to t("layouts.log-in"), login_path %></li>
+        <% if logged_in? %>
+          <% if is_admin? %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <%= t "layouts.managers" %><b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to t("layouts.manager-users"), "#" %></li>
+                <li><%= link_to t("layouts.manager-books"), "#" %></li>
+                <li><%= link_to t("layouts.manager-authors"), "#" %></li>
+                <li><%= link_to t("layouts.manager-publishers"), "#" %></li>
+                <li><%= link_to t("layouts.manager-categories"), "#" %></li>
+                <li><%= link_to t("layouts.manager-borrows"), "#" %></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <%= t "layouts.account" %><b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to t("layouts.profile"), current_user %></li>
+                <li><%= link_to t("layouts.settings"),
+                  edit_user_path(current_user) %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to t("layouts.log-out"),
+                    logout_path, method: "delete" %>
+                </li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to t("layouts.books"), "#" %></li>
+            <li><%= link_to t("layouts.users"), "#" %></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <%= t "layouts.account" %><b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to t("layouts.profile"), current_user %></li>
+                <li><%= link_to t("layouts.settings"),
+                  edit_user_path(current_user) %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to t("layouts.log-out"),
+                    logout_path, method: "delete" %>
+                </li>
+              </ul>
+            </li>
+          <% end %>
+        <% else %>
+          <li><%= link_to t("layouts.books"), "#" %></li>
+          <li><%= link_to t("layouts.log-in"), "#" %></li>
+        <% end %>
       </ul>
     </nav>
   </div>
