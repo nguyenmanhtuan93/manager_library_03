@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "/static_pages/*page" => "static_pages#show"
 
   get "/signup", to: "users#new"
+  post "/signup", to: "users#create"
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
@@ -10,6 +11,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :create, :edit]
 
   resources :publishers, only: :show
+
+  resources :books, only: [:index, :show]
 
   namespace :admin do
     resources :publishers, except: :show

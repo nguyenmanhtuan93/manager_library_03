@@ -11,4 +11,10 @@ class Book < ApplicationRecord
     source_type: Author.name, source: :ownerable
 
   belongs_to :publisher
+
+  validates :name, presence: true
+  validates :number_of_pages, presence: true
+  validates :year, presence: true
+  validates :book_numbers, presence: true
+  validates :languages, presence: true
 end

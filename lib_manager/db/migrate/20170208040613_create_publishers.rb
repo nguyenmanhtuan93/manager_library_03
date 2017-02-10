@@ -5,8 +5,6 @@ class CreatePublishers < ActiveRecord::Migration[5.0]
       t.string :add
       t.integer :phone
       t.string :email
-      t.integer :fax
-      t.string :details
 
       t.timestamps
     end
