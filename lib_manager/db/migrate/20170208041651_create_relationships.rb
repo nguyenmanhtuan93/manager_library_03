@@ -8,5 +8,8 @@ class CreateRelationships < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+    add_index :relationships, :ownerable_id
+    add_index :relationships, :targetable_id
+    add_index :relationships, [:ownerable_id, :targetable_id], unique: true
   end
 end

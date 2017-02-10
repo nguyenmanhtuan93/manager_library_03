@@ -1,0 +1,40 @@
+<% @user ||= current_user %>
+<h4><%= t "users.user-info.users" %></h4>
+<div class="stats">
+  <%= link_to relationships_path id: @user.id, title: "following-users" do %>
+    <strong id="following-users" class="stat">
+      <%= @user.following_users.count %>
+    </strong>
+    <%= t "users.user-info.following" %>
+  <% end %>
+  <%= link_to relationships_path id: @user.id, title: "followers" do %>
+    <strong id="follower-users" class="stat">
+      <%= @user.follower_users.count %>
+    </strong>
+    <%= t("users.user-info.followers") %>
+  <% end %>
+</div>
+<h4><%= t "users.user-info.books" %></h4>
+<div class="stats">
+  <%= link_to relationships_path id: @user.id, title: "following-books" do %>
+    <strong id="following-books" class="stat">
+      <%= @user.following_books.count %>
+    </strong>
+    <%= t "users.user-info.following" %>
+  <% end %>
+  <%= link_to relationships_path id: @user.id, title: "likes" do %>
+    <strong id="likes" class="stat">
+      <%= @user.books.count %>
+    </strong>
+    <%= t "users.user-info.likes" %>
+  <% end %>
+</div>
+<h4><%= t "users.user-info.authors" %></h4>
+<div class="stats">
+  <%= link_to relationships_path id: @user.id, title: "following-authors" do %>
+    <strong id="following-authors" class="stat">
+      <%= @user.following_authors.count %>
+    </strong>
+    <%= t "users.user-info.following" %>
+  <% end %>
+</div>
