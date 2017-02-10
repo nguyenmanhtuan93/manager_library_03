@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :details
       t.boolean :is_borrow, default: true
       t.integer :borrow_out_date, default: 0
+      t.string :remember_digest
 
       t.timestamps
     end
