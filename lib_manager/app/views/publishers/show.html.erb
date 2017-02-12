@@ -1,0 +1,15 @@
+<%= provide :title, @publisher.name %>
+<h1><%= t "publisher.show-page.profile" %></h1>
+<div class="row">
+    <section class="publisher_info">
+      <p><%= t "publisher.show-page.name" %><%= @publisher.name %></p>
+      <p><%= t "publisher.show-page.add" %><%= @publisher.add %></p>
+      <p><%= t "publisher.show-page.phone" %><%= @publisher.phone %></p>
+      <p><%= t "publisher.show-page.email" %><%= @publisher.email %></p>
+      <% if current_user.is_admin? %>
+        <p><%= link_to t("publisher.show-page.edit"),
+          edit_admin_publisher_path(@publisher) %>
+        </p>
+      <% end %>
+    </section>
+</div>

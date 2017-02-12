@@ -1,5 +1,6 @@
 en:
   title: "Manager Library application"
+  login-danger: "Please log in."
   layouts:
     logo: "Manager Library"
     log-in: "Log in"
@@ -56,3 +57,29 @@ en:
     unfollow: "Unfollow"
     like: "Like"
     unlike: "Unlike"
+  publisher:
+    create-success: "Create publisher successfully!"
+    update-success: "Publisher updated!"
+    delete-success: "Publisher deleted!"
+    find-danger: "Publisher not found!"
+    sure: "You sure?"
+    edit: "edit"
+    delete: "delete"
+    edit-page:
+      title: "Edit publisher"
+      button: "Save changes"
+      update-profile: "Update publisher profile"
+    index-page:
+      title: "All publishers"
+      add-new: "Add new publisher"
+    new-page:
+      title: "Create publisher"
+      button: "Create"
+      create: "Create Publisher"
+    show-page:
+      edit: "Edit profile"
+      profile: "Publisher profile"
+      name: "Name: "
+      add: "Add: "
+      phone: "Phone: "
+      email: "Email: "
