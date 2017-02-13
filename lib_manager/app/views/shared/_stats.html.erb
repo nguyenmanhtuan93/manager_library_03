@@ -7,13 +7,15 @@
     </strong>
     <%= t "users.user-info.following" %>
   <% end %>
+
   <%= link_to relationships_path id: @user.id, title: "followers" do %>
     <strong id="follower-users" class="stat">
       <%= @user.follower_users.count %>
     </strong>
-    <%= t("users.user-info.followers") %>
+    <%= t "users.user-info.followers" %>
   <% end %>
 </div>
+
 <h4><%= t "users.user-info.books" %></h4>
 <div class="stats">
   <%= link_to relationships_path id: @user.id, title: "following-books" do %>
@@ -22,6 +24,7 @@
     </strong>
     <%= t "users.user-info.following" %>
   <% end %>
+
   <%= link_to relationships_path id: @user.id, title: "likes" do %>
     <strong id="likes" class="stat">
       <%= @user.books.count %>
@@ -29,6 +32,7 @@
     <%= t "users.user-info.likes" %>
   <% end %>
 </div>
+
 <h4><%= t "users.user-info.authors" %></h4>
 <div class="stats">
   <%= link_to relationships_path id: @user.id, title: "following-authors" do %>
