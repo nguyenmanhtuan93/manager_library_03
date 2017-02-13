@@ -1,0 +1,12 @@
+<% provide :title, t("publisher.index-page.title") %>
+<h1><%= t "publisher.index-page.title" %></h1>
+
+<%= will_paginate %>
+
+<ul class="publishers">
+  <%= render @publishers %>
+</ul>
+
+<%= will_paginate %>
+
+<%= link_to t("publisher.index-page.add-new"), new_admin_publisher_path %>
