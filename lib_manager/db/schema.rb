@@ -14,11 +14,10 @@ ActiveRecord::Schema.define(version: 20170208041651) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "name"
-    t.string   "image"
+    t.string   "email"
     t.date     "birthday"
-    t.integer  "publisher_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "books", force: :cascade do |t|
@@ -27,12 +26,11 @@ ActiveRecord::Schema.define(version: 20170208041651) do
     t.date     "year"
     t.string   "languages"
     t.string   "image"
-    t.integer  "edition",         default: 0
     t.integer  "book_numbers"
     t.float    "rating"
     t.integer  "publisher_id"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "borrows", force: :cascade do |t|
@@ -78,7 +76,6 @@ ActiveRecord::Schema.define(version: 20170208041651) do
     t.string   "ownerable_type"
     t.integer  "targetable_id"
     t.string   "targetable_type"
-    t.integer  "type"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["ownerable_id", "targetable_id"], name: "index_relationships_on_ownerable_id_and_targetable_id", unique: true

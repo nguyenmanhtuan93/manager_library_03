@@ -112,3 +112,28 @@ en:
       add: "Add: "
       phone: "Phone: "
       email: "Email: "
+  author:
+    create-success: "Create author successfully!"
+    update-success: "Author updated successfully!"
+    delete-success: "Author deleted successfully!"
+    delete-danger: "Author could not be deleted!"
+    find-danger: "Author not found!"
+    sure: "You sure?"
+    edit: "edit"
+    delete: "delete"
+    edit-page:
+      title: "Edit author"
+      button: "Save changes"
+      update-profile: "Update author profile"
+    index-page:
+      title: "All authors"
+      add-new: "Add new author"
+    new-page:
+      title: "Create author"
+      button: "Create"
+      create: "Create Author"
+    show-page:
+      edit: "Edit profile"
+      profile: "Author profile"
+      name: "Name: "
+      email: "Email: "
