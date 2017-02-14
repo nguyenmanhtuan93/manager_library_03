@@ -31,7 +31,6 @@ en:
     contact-pages: "This is contact pages"
   users:
     sign-up: "Sign up"
-    signup-pages: "This will be a signup page for new users."
     user-info:
       users: "Users"
       books: "Books"
@@ -39,8 +38,20 @@ en:
       following: "following"
       followers: "followers"
       likes: "likes"
-    notfound: "User not found!"
     create-button: "Create my account"
+    update-success: "Profile updated!"
+    delete-success: "User deleted!"
+    find-danger: "User not found!"
+    sure: "You sure?"
+    edit: "edit"
+    delete: "delete"
+    edit-page:
+      title: "Edit user"
+      button: "Save changes"
+      update: "Update your profile"
+      change: "change"
+    index-page:
+      title: "All users"
   shared:
     error: "error"
     noti-error: "The form contains "
