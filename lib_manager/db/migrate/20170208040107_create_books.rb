@@ -5,8 +5,7 @@ class CreateBooks < ActiveRecord::Migration[5.0]
       t.integer :number_of_pages
       t.date :year
       t.string :languages
-      t.string :details
-      t.integer :edition, default: 0
+      t.string :image
       t.integer :book_numbers
       t.float :rating
       t.integer :publisher_id

@@ -52,6 +52,24 @@ en:
     submit: "Log in"
   books:
     borrows: "Borrows"
+    all: "All books"
+    new-page:
+      title: "Create book"
+      button: "Create"
+      create: "Create Book"
+      prompt: "Please select language"
+      vietnam: "Vietnamese"
+      english: "English"
+      japan: "Japanese"
+    index-page:
+      create: "Create"
+      export: "Export"
+      edit: "Edit"
+      delete: "Delete"
+      author: "Authors: "
+      publisher: "Publisher: "
+      category: "Categories: "
+      confirm: "You sure?"
   actions:
     follow: "Follow"
     unfollow: "Unfollow"

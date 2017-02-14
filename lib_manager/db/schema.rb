@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170209073957) do
+ActiveRecord::Schema.define(version: 20170208041651) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "name"
-    t.string   "details"
+    t.string   "image"
     t.date     "birthday"
     t.integer  "publisher_id"
     t.datetime "created_at",   null: false
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20170209073957) do
     t.integer  "number_of_pages"
     t.date     "year"
     t.string   "languages"
-    t.string   "details"
+    t.string   "image"
     t.integer  "edition",         default: 0
     t.integer  "book_numbers"
     t.float    "rating"
@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 20170209073957) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
-    t.string   "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -70,8 +69,6 @@ ActiveRecord::Schema.define(version: 20170209073957) do
     t.string   "add"
     t.integer  "phone"
     t.string   "email"
-    t.integer  "fax"
-    t.string   "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -81,6 +78,7 @@ ActiveRecord::Schema.define(version: 20170209073957) do
     t.string   "ownerable_type"
     t.integer  "targetable_id"
     t.string   "targetable_type"
+    t.integer  "type"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["ownerable_id", "targetable_id"], name: "index_relationships_on_ownerable_id_and_targetable_id", unique: true
@@ -93,12 +91,11 @@ ActiveRecord::Schema.define(version: 20170209073957) do
     t.string   "email"
     t.string   "password_digest"
     t.boolean  "is_admin",        default: false
-    t.string   "details"
     t.boolean  "is_borrow",       default: true
     t.integer  "borrow_out_date", default: 0
+    t.string   "remember_digest"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
-    t.string   "remember_digest"
   end
 
 end

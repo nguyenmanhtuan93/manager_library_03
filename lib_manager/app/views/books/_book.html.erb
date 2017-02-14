@@ -1,0 +1,24 @@
+<li>
+  <%= image_tag book.picture.url if micropost.picture? %>
+  <%= link_to book.name, book %>
+  <% if current_user.is_admin? %>
+    <div class="pull-right">
+      <%= link_to user, method: :delete do %>
+          <button type="button" class="btn btn-warning">
+            <%= t "books.index-page.edit" %>
+          </button>
+      <% end %>
+      <%= link_to user, method: :delete,
+        data: {confirm: t("books.index-page.confirm")} do %>
+          <button type="button" class="btn btn-danger">
+            <%= t "books.index-page.delete" %>
+          </button>
+      <% end %>
+    </div>
+  <% end %>
+  <div>
+    <p class="p_book"><%= t "books.index-page.author" %></p>
+    <p class="p_book"><%= t "books.index-page.publisher" %></p>
+    <p class="p_book"><%= t "books.index-page.category" %></p>
+  </div>
+</li>
