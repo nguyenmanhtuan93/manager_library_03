@@ -1,0 +1,9 @@
+<li>
+  <div class="pull-left"><%= link_to category.name, admin_category_path(category) %></div>
+  <div class="pull-right">
+    <%= link_to t("category.edit"), edit_admin_category_path(category) %>
+      | <%= link_to t("category.delete"), admin_category_path(category),
+        method: :delete, data: {confirm: t("category.sure")} %>
+  </div>
+  <div class="clearfix"></div>
+</li>

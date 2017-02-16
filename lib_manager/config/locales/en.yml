@@ -131,9 +131,33 @@ en:
     new-page:
       title: "Create author"
       button: "Create"
-      create: "Create Author"
+      create: "Create author"
     show-page:
       edit: "Edit profile"
       profile: "Author profile"
       name: "Name: "
       email: "Email: "
+  category:
+    create-success: "Create category successfully!"
+    update-success: "Category updated successfully!"
+    delete-success: "Category deleted successfully!"
+    delete-danger: "Category could not be deleted!"
+    find-danger: "Category not found!"
+    sure: "You sure?"
+    edit: "edit"
+    delete: "delete"
+    edit-page:
+      title: "Edit category"
+      button: "Save changes"
+      update-profile: "Update category details"
+    index-page:
+      title: "All categories"
+      add-new: "Add new category"
+    new-page:
+      title: "Create category"
+      button: "Create"
+      create: "Create category"
+    show-page:
+      edit: "Edit details"
+      profile: "Category details"
+      name: "Name: "

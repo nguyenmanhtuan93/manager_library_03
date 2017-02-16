@@ -1,0 +1,10 @@
+<%= provide :title, @category.name %>
+<h1><%= t "category.show-page.profile" %></h1>
+<div class="row">
+    <section class="category_info">
+      <p><%= t "category.show-page.name" %><%= @category.name %></p>
+      <p><%= link_to t("category.show-page.edit"),
+        edit_admin_category_path(@category) %>
+      </p>
+    </section>
+</div>
