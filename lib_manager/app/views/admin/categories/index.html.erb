@@ -1,0 +1,12 @@
+<% provide :title, t("category.index-page.title") %>
+<h1><%= t "category.index-page.title" %></h1>
+
+<%= will_paginate %>
+
+<ul class="categories">
+  <%= render @categories %>
+</ul>
+
+<%= will_paginate %>
+
+<%= link_to t("category.index-page.add-new"), new_admin_category_path %>
