@@ -14,8 +14,11 @@ Rails.application.routes.draw do
 
   resources :books, only: [:index, :show]
 
+  resources :authors, only: :show
+
   namespace :admin do
     resources :users, only: [:index, :edit, :destroy]
     resources :publishers, except: :show
+    resources :authors, except: :show
   end
 end

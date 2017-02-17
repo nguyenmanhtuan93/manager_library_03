@@ -1,0 +1,14 @@
+<%= provide :title, @author.name %>
+<h1><%= t "author.show-page.profile" %></h1>
+<div class="row">
+  <section class="author_info">
+    <p><%= t "author.show-page.name" %><%= @author.name %></p>
+    <p><%= t "author.show-page.email" %><%= @author.email %></p>
+    <% if current_user.is_admin? %>
+      <p>
+        <%= link_to t("author.show-page.edit"),
+          edit_admin_author_path(@author) %>
+      </p>
+    <% end %>
+  </section>
+</div>
