@@ -52,6 +52,7 @@ en:
       change: "change"
     index-page:
       title: "All users"
+      add-new: "Create new user"
   shared:
     error: "error"
     noti-error: "The form contains "
@@ -161,3 +162,12 @@ en:
       edit: "Edit details"
       profile: "Category details"
       name: "Name: "
+  search:
+    button: "Search"
+    admin: "Admin"
+    user: "User"
+  export: "Export to Excel"
+  admin:
+    user:
+      title: "Create new user"
+      button: "Create"

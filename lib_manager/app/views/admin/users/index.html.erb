@@ -1,10 +1,27 @@
 <% provide :title, t("users.index-page.title") %>
 <h1><%= t "users.index-page.title" %></h1>
 
-<%= will_paginate %>
+<%= form_tag admin_users_path, method: :get, remote: true do %>
+  <%= text_field_tag :search_user, params[:search_user] %>
+  <div class="col-md-6 radio-admin">
+    <%= radio_button_tag :search_permission, "t" %><%= t "search.admin" %>
+    <%= radio_button_tag :search_permission, "f" %><%= t "search.user" %>
+  </div>
+  <%= submit_tag t("search.button"), class: "btn btn-primary submit" %>
+<% end %>
+
+<div class="paginate">
+  <%= will_paginate %>
+</div>
 
 <ul class="users">
   <%= render @users %>
 </ul>
 
-<%= will_paginate %>
+<div class="paginate">
+  <%= will_paginate %>
+</div>
+
+<p><%= link_to t("users.index-page.add-new"), new_admin_user_path %></p>
+
+<p><%= link_to t("export"), admin_users_path(format: "xls") %></p>
