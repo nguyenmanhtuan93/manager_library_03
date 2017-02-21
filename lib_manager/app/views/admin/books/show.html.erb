@@ -1,0 +1,22 @@
+<%= provide :title, t("books.show-page.title") %>
+<h1><%= t "books.show-page.title" %></h1>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="thumbnail">
+        <div class="col-md-4">
+          <%= render "image/image_book", book: @book %>
+        </div>
+        <div class="col-md-8">
+          <%= render "info_book", book: @book %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+
+    </div>
+  </div>
+</div>
+
+<%= will_paginate %>
