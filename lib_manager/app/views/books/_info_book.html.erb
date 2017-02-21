@@ -1,0 +1,41 @@
+<div class="caption">
+  <h3><%= book.name %></h3>
+  <p>
+    <i><%= t "books.show-page.author" %></i>
+    <% book.authors.each do |author| %>
+      <%= link_to author.name, author_path(author) %>
+      <%= t "books.index-page.comma" %>
+    <% end %>
+  </p>
+  <p>
+    <i><%= t "books.show-page.language" %></i>
+    <%= book.languages %>
+  </p>
+  <p>
+    <i><%= t "books.show-page.publisher" %></i>
+    <%= book.publisher.name %>
+  </p>
+  <p>
+    <i><%= t "books.show-page.categories" %></i>
+    <% book.categories.each do |category| %>
+      <%= link_to category.name, category_path(category) %>
+      <%= t "books.index-page.comma" %>
+    <% end %>
+  </p>
+  <p>
+    <i><%= t "books.show-page.numbers_of_book" %></i>
+    <%= book.numbers_page %>
+  </p>
+  <p>
+    <i><%= t "books.show-page.year" %></i>
+    <%= book.year %>
+  </p>
+  <p>
+    <i><% t "books.show-page.status" %></i>
+    <% if book.numbers_borrowed == book.numbers_initial %>
+      <%= t "books.show-page.unavailable" %>
+    <% else %>
+      <%= t "books.show-page.available" %>
+    <% end %>
+  </p>
+</div>

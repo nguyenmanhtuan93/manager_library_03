@@ -1,0 +1,10 @@
+<div class="caption">
+  <h3><%= link_to book.name, book_path(book) %></h3>
+  <p>
+    <i><%= t "books.index-page.by" %></i>
+    <% book.authors.each do |author| %>
+      <%= link_to author.name, author_path(book.author) %>
+      <%= t "books.index-page.comma" %>
+    <% end %>
+  </p>
+</div>

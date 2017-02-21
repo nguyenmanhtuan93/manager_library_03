@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  resources :users, except: [:new, :destroy]
+  resources :users, only: [:show, :edit, :update]
 
   resources :publishers, only: :show
 
@@ -16,12 +16,18 @@ Rails.application.routes.draw do
 
   resources :authors, only: :show
 
-  resources :categories, only: :show
+  resources :borrows, except: :show
+
+  resources :comments, only: :create
+
+  resources :relationships, only: [:index, :create, :destroy]
 
   namespace :admin do
-    resources :users, only: [:index, :edit, :destroy]
-    resources :publishers, except: :show
-    resources :authors, except: :show
-    resources :categories
+    resources :users
+    resources :publishers
+    resources :authors
+    resources :categories, except: :show
+    resources :books
+    resources :borrows, only: :update
   end
 end

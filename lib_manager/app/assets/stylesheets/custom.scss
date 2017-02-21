@@ -157,8 +157,11 @@ input {
 
 /* books */
 
-.p_book {
-  margin: 0px;
+.cover-index {
+  height:100px;
+  img {
+    height:100%;
+  }
 }
 
 /* sidebar */
@@ -209,3 +212,4 @@ aside {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
