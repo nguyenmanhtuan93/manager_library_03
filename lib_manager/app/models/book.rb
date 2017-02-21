@@ -12,9 +12,18 @@ class Book < ApplicationRecord
 
   belongs_to :publisher
 
+  mount_uploader :picture, PictureBook
+
+  validates :book_numbers, presence: true
   validates :name, presence: true
   validates :number_of_pages, presence: true
-  validates :year, presence: true
-  validates :book_numbers, presence: true
   validates :languages, presence: true
+  validate  :picture_size
+
+  private
+  def picture_size
+    if picture.size > 3.megabytes
+      errors.add :picture, t("books.new-page.over-size")
+    end
+  end
 end

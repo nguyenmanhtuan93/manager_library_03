@@ -1,0 +1,43 @@
+<%= form_for [:admin, @book] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :number_of_pages %>
+  <%= f.text_field :numbers_page, class: "form-control" %>
+
+  <%= f.label :publishing_year %>
+  <%= f.text_field :year, class: "form-control" %>
+
+  <%= f.label :language %>
+  <%= f.select :languages,[t("books.new-page.vietnam"),
+      t("books.new-page.english"), t("books.new-page.japan")],
+    {:prompt => t("books.new-page.prompt.language")} %>
+
+  <%= f.label :number_of_books %>
+  <%= f.text_field :numbers_initial, class: "form-control" %>
+
+  <%= f.label :category %>
+  <%= f.select :category_id, options_for_select(@categories,
+    {class: "form-control"}),
+    {:prompt => t("books.new-page.prompt.category")} %>
+
+  <br>
+  <%= f.label :author %>
+  <%= f.select :author_id, options_for_select(@authors,
+    {class: "form-control"}),
+    {:prompt => t("books.new-page.prompt.author")} %>
+
+  <br>
+  <%= f.label :publisher %>
+  <%= f.select :publisher_id, options_for_select(@publishers,
+    {class: "form-control"}),
+    {:prompt => t("books.new-page.prompt.publisher")} %>
+
+  <br>
+  <span class="picture" id="book_picture">
+    <%= f.file_field :picture, accept: "image/jpeg,image/gif,image/png" %>
+  </span>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

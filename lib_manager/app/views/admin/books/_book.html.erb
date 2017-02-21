@@ -1,0 +1,33 @@
+<tr>
+  <td><%= index_for book_counter , @books.current_page, 15 %></td>
+  <td>
+    <div class="cover-index">
+      <%= render "image/image_book", book: book %>
+    </div>
+  </td>
+  <td><%= link_to book.name, admin_book_path(book) %></td>
+  <td>
+    <% book.categories.each do |category| %>
+      <%= link_to category.name, category_path(category) %>
+      <%= t "books.index-page.comma" %>
+    <% end %>
+  </td>
+  <td>
+    <% book.authors.each do |author| %>
+      <%= link_to author.name, author_path(author) %>
+      <%= t "books.index-page.comma" %>
+    <% end %>
+  </td>
+  <td><%= book.publisher.name %></td>
+  <td><%= book.numbers_initial %></td>
+  <td><%= book.numbers_borrowed %></td>
+  <td>
+    <%= link_to edit_admin_book_path book, class: "btn btn-default" do %>
+      <i class="glyphicon glyphicon-pencil"></i>
+    <% end %>
+    <%= link_to [:admin, book], method: :delete,
+      data: {confirm: t("books.index-page.confirm")}, class: "btn btn-default" do %>
+      <i class="glyphicon glyphicon-remove"></i>
+    <% end %>
+  </td>
+</tr>

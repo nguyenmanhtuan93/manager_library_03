@@ -1,0 +1,31 @@
+<% provide :title, t("books.all") %>
+<h1><%= t "books.all" %></h1>
+<div class="container">
+  <div align="right" class="btn-group">
+    <%= button_to t("books.index-page.create"),
+      new_admin_book_path, method: :get, class: "btn btn-primary" %>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th><%= t "books.index-page.infor.id" %></th>
+          <th><%= t "books.index-page.infor.cover" %></th>
+          <th><%= t "books.index-page.infor.name" %></th>
+          <th><%= t "books.index-page.infor.category" %></th>
+          <th><%= t "books.index-page.infor.author" %></th>
+          <th><%= t "books.index-page.infor.publisher" %></th>
+          <th><%= t "books.index-page.infor.number" %></th>
+          <th><%= t "books.index-page.infor.borrowed" %></th>
+          <th><%= t "books.index-page.infor.action" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @books %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%= will_paginate %>

@@ -1,0 +1,8 @@
+<%= link_to book_path book do %>
+  <% if book.picture.nil? %>
+    <img src="https://dummyimage.com/200/300/9e9e9e/ffffff.png
+      &text=iRails+team" class="img-responsive hover">
+  <% else %>
+    <%= image_tag book.picture %>
+  <% end %>
+<% end %>
