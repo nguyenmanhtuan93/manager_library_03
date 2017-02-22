@@ -30,6 +30,9 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: {minimum: 6}
 
+  scope :search_user, -> name{where "name LIKE ? ", "%#{name}%"}
+  scope :search_permission, -> is_admin{where is_admin: is_admin if is_admin.present?}
+
   class << self
     def digest string
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -39,6 +42,15 @@ class User < ApplicationRecord
 
     def new_token
       SecureRandom.urlsafe_base64
+    end
+
+    def to_xls options = {}
+      CSV.generate options do |csv|
+        csv << column_names
+        all.each do |user|
+          csv << user.attributes.values_at(*column_names)
+        end
+      end
     end
   end
 

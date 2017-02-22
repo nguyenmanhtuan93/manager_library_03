@@ -19,9 +19,10 @@ Rails.application.routes.draw do
   resources :categories, only: :show
 
   namespace :admin do
-    resources :users, only: [:index, :edit, :destroy]
+    resources :users
     resources :publishers, except: :show
     resources :authors, except: :show
     resources :categories
+    resources :xml, only: :index
   end
 end

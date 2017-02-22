@@ -209,3 +209,20 @@ aside {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+.radio-admin {
+  input{
+    width: inherit;
+  }
+}
+
+.publishers {
+  padding: 40px 0;
+}
+
+.authors {
+  padding: 40px 0;
+}
+
+.categories {
+  padding: 40px 0;
+}

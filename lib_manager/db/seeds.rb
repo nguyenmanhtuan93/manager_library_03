@@ -1,7 +1,10 @@
 User.create! name: "Administrator", email: "example@railstutorial.org",
   password: "123456", password_confirmation: "123456", is_admin: true
 
-99.times do |n|
+User.create! name: "Administrator2", email: "example2@railstutorial.org",
+    password: "123456", password_confirmation: "123456", is_admin: true
+
+50.times do |n|
   name = Faker::Name.name
   email = Faker::Internet.email
   password = "password"

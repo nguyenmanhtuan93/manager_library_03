@@ -1,8 +1,32 @@
 class Admin::UsersController < AdminController
-  before_action :find_user, except: :index
+  before_action :find_user, except: [:index, :new, :create]
 
   def index
-    @users = User.paginate page: params[:page]
+    @users = User.search_user(params[:search_user])
+      .search_permission(params[:search_permission])
+      .paginate page: params[:page]
+    respond_to do |format|
+      format.html
+      format.js
+      format.xls {send_data @users.to_xls(col_sep: "\t")}
+    end
+  end
+
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new user_params
+    if @user.save
+      flash[:success] = t "static_pages.welcome"
+      redirect_to admin_users_path
+    else
+      render :new
+    end
+  end
+
+  def show
   end
 
   def edit
@@ -10,8 +34,8 @@ class Admin::UsersController < AdminController
 
   def update
     if @user.update_attributes user_params
+      redirect_to admin_users_path
       flash[:success] = t "users.update-success"
-      redirect_to @user
     else
       render :edit
     end
@@ -20,7 +44,7 @@ class Admin::UsersController < AdminController
   def destroy
     @user.destroy
     flash[:success] = t "users.delete-success"
-    redirect_to admin_users_url
+    redirect_to admin_users_path
   end
 
   private
@@ -33,7 +57,7 @@ class Admin::UsersController < AdminController
     @user = User.find_by id: params[:id]
     unless @user
       flash[:danger] = t "users.find-danger"
-      redirect_to root_url
+      redirect_to admin_users_path
     end
   end
 end
